@@ -1,8 +1,8 @@
-import ProductList from "@/features/ProductList";
+import ProductList from "@/features/CatalogList/CatalogList";
 
 const CatalogPage = () => {
   return (
-    <div className="p-4">
+    <div className="">
       <ProductList />
     </div>
   );
