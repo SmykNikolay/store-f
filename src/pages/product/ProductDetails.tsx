@@ -48,20 +48,20 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
         <motion.p
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.1, delay: 0.1 }}
-          viewport={{ once: true }}
-          className={styles.description}
-        >
-          {product.description}
-        </motion.p>
-        <motion.p
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.1, delay: 0.2 }}
           viewport={{ once: true }}
           className={styles.price}
         >
           {product.price} 000 ₽
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.1, delay: 0.1 }}
+          viewport={{ once: true }}
+          className={styles.description}
+        >
+          {product.description}
         </motion.p>
 
         {inputs.map((input, index) => (
