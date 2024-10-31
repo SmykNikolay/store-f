@@ -1,8 +1,7 @@
 import { Suspense } from "react";
 import "./app.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Header from "@/widgets/header";
-import Footer from "@/widgets/footer";
+import Navigation from "@/widgets/Navigation";
 import Login from "@/pages/login";
 import Product from "@/pages/product";
 import Catalog from "@/pages/catalog";
@@ -11,7 +10,7 @@ function App() {
   return (
     <Router>
       <main className="">
-        <Header />
+        <Navigation />
         <Routes>
           <Route
             path="/login"
@@ -38,7 +37,7 @@ function App() {
             }
           />
         </Routes>
-        <Footer />
+        <Navigation />
       </main>
     </Router>
   );

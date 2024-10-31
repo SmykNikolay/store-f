@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import ProductCard from "@/features/CatalogList/CatalogCard";
 import { useProducts } from "@/entities/product/useProducts";
 import styles from "./CatalogList.module.css";
@@ -15,8 +16,16 @@ const CatalogList: React.FC = () => {
 
   return (
     <div className={styles.grid}>
-      {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
+      {products.map((product, index) => (
+        <motion.div
+          key={product.id}
+          initial={{ opacity: 1, y: 500 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1, rotate: 0 }}
+          transition={{ duration: 0.5 + (index % 3) * 0.1 }}
+          viewport={{ once: true }}
+        >
+          <ProductCard product={product} />
+        </motion.div>
       ))}
     </div>
   );

@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 import { useProduct } from "@/entities/product/useProduct";
 import React from "react";
 import { useParams } from "react-router-dom";
@@ -25,9 +27,14 @@ const ProductPage: React.FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.flexRow}>
-        <div className={styles.imageContainer}>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className={styles.imageContainer}
+        >
           <ImageAtom images={product.images} alt={product.name} />
-        </div>
+        </motion.div>
         <ProductDetails product={product} />
       </div>
     </div>
