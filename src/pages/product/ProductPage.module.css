@@ -26,6 +26,7 @@
 
 .imageContainer {
   width: 100%;
+  border-right: 1px solid #000;
 }
 
 .image {
@@ -46,9 +47,6 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 2rem;
-
-  border-left: 1px solid #000;
-  border-bottom: 1px solid #000;
 }
 
 .button {

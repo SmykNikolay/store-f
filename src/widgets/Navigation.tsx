@@ -11,30 +11,30 @@ export default function Navigation() {
       viewport={{ once: true }}
       className={styles.top}
     >
-      <div className={styles.nav}>
+      <div className={styles.navTop}>
         <ul className={styles.navList}>
-          <li className={styles.navItem}>
+          <li className={styles.navItemTop}>
             <Link to="/order-status">Статус заказа</Link>
           </li>
-          <li className={styles.navItem}>
+          <li className={styles.navItemTop}>
             <Link to="/payment">Оплата</Link>
           </li>
-          <li className={styles.navItem}>
+          <li className={styles.navItemTop}>
             <Link to="/delivery">Доставка</Link>
           </li>
-          <li className={styles.navItem}>
+          <li className={styles.navItemTop}>
             <Link to="/how-to-order">Как заказать</Link>
           </li>
-          <li className={styles.navItem}>
+          <li className={styles.navItemTop}>
             <Link to="/returns">Возврат</Link>
           </li>
-          <li className={styles.navItem}>
+          <li className={styles.navItemTop}>
             <Link to="/contacts">Контакты</Link>
           </li>
-          <li className={styles.navItem}>
+          <li className={styles.navItemTop}>
             <Link to="/about">О Нас</Link>
           </li>
-          <li className={styles.navItem}>
+          <li className={styles.navItemTop}>
             <Link to="/terms">Сроки</Link>
           </li>
         </ul>
