@@ -1,0 +1,29 @@
+### Получить все продукты
+GET http://localhost:1337/api/products
+Authorization: Bearer 9f760fe7fe84ba5cf19bedee7c2154815736b0748cc29403d088c6f0c43149177e0229e7d743b334c3ce6af0aca318870d10f53279d82cade510814e47e64ae2a07256eeea498279ab15306fbdf4a984944571973efe1a8381d53990c554d159d5fee27eae877a3aaccdfa6860eb92ed9c9fc5d595755db782978d125ac8db1a
+
+### Получить продукт по ID
+GET http://localhost:1337/api/products/3
+Authorization: Bearer 9f760fe7fe84ba5cf19bedee7c2154815736b0748cc29403d088c6f0c43149177e0229e7d743b334c3ce6af0aca318870d10f53279d82cade510814e47e64ae2a07256eeea498279ab15306fbdf4a984944571973efe1a8381d53990c554d159d5fee27eae877a3aaccdfa6860eb92ed9c9fc5d595755db782978d125ac8db1a
+
+### Создать новый продукт
+POST http://localhost:3000/products
+Authorization: Bearer token1
+Content-Type: application/json
+
+{
+  "name": "Название продукта",
+  "description": "Описание продукта",
+  "price": 100.00,
+  "images": [
+    "https://a.lmcdn.ru/img600x866/M/P/MP002XW14ZKR_23298434_4_v1_2x.jpg",
+    "https://a.lmcdn.ru/img600x866/M/P/MP002XW14ZKR_23298433_3_v1_2x.jpg",
+    "https://a.lmcdn.ru/img600x866/M/P/MP002XW14ZKR_23298432_2_v1_2x.jpg",
+    "https://a.lmcdn.ru/img600x866/M/P/MP002XW14ZKR_23298431_1_v1_2x.jpg"
+  ],
+  "fastener": "Молния",
+  "sleeveLength": "Короткий рукав",
+  "dressLength": "Мини",
+  "color": "Белый",
+  "composition": "100% хлопок"
+}

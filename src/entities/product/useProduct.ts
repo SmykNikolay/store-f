@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Product } from "./Product.types";
+import { Product } from "./model/types";
+import { env } from "@/shared/config/env";
 
 const fetchProductById = async (id: string): Promise<Product> => {
-  const response = await axios.get(`http://localhost:3000/products/${id}`, {
+  const response = await axios.get(`${env.VITE_API_URL}/products/${id}`, {
     headers: {
-      Authorization: `Bearer token1`,
+      Authorization: `Bearer ${env.VITE_API_KEY}`,
     },
   });
   return response.data;

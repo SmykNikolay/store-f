@@ -1,21 +1,31 @@
+// widgets/CatalogCard/ui/CatalogCard.tsx
 import React from "react";
 import ImageAtom from "@/shared/ui/ImageAtom";
-import { Product } from "@/entities/product/Product.types";
+import { Product } from "@/entities/product/model/types";
 import { Link } from "react-router-dom";
+import { formatPrice } from "@/shared/lib/formatPrice";
 import styles from "./CatalogCard.module.css";
 
-const ProductCard: React.FC<{ product: Product }> = ({ product }) => (
-  <Link to={`/product/${product.id}`} className={styles.link}>
-    <div className={styles.card}>
-      <ImageAtom images={product.images} alt={product.name} />
-      <div className={styles.content}>
-        <div className={styles.title}>{product.name}</div>
-      </div>
-      <div className={styles.footer}>
-        <span className={styles.price}>{product.price} 000 ₽</span>
-      </div>
-    </div>
-  </Link>
-);
+interface CatalogCardProps {
+  product: Product;
+}
 
-export default ProductCard;
+const CatalogCard: React.FC<CatalogCardProps> = ({ product }) => {
+  const { id, title, price, images } = product;
+
+  return (
+    <Link to={`/product/${id}`} className={styles.link}>
+      <article className={styles.card}>
+        {/* <ImageAtom images={images} alt={title} /> */}
+        <div className={styles.content}>
+          <h3 className={styles.title}>{title}</h3>
+        </div>
+        <footer className={styles.footer}>
+          <span className={styles.price}>{formatPrice(price)}</span>
+        </footer>
+      </article>
+    </Link>
+  );
+};
+
+export default CatalogCard;

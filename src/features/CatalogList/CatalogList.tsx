@@ -5,7 +5,7 @@ import styles from "./CatalogList.module.css";
 
 const CatalogList: React.FC = () => {
   const { products, loading, error } = useProducts();
-
+  console.log(products);
   if (loading) {
     return <div className={styles.loading}>Загрузка...</div>;
   }

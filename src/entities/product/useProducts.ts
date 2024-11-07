@@ -1,11 +1,19 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Product } from "./Product.types";
+import { Product } from "./model/types";
 
-const fetchProducts = async (): Promise<Product[]> => {
-  const response = await axios.get("http://localhost:3000/products", {
+import { env } from "@/shared/config/env";
+
+export interface ApiResponse<T> {
+  data: T;
+  status: number;
+  message?: string;
+}
+
+const fetchProducts = async (): Promise<ApiResponse<Product[]>> => {
+  const response = await axios.get(`${env.VITE_API_URL}/products`, {
     headers: {
-      Authorization: `Bearer token1`,
+      Authorization: `Bearer ${env.VITE_API_KEY}`,
     },
   });
   return response.data;
@@ -20,7 +28,7 @@ export const useProducts = () => {
     const fetchData = async () => {
       try {
         const productsData = await fetchProducts();
-        setProducts(productsData);
+        setProducts(productsData.data);
       } catch (err) {
         setError("Ошибка загрузки продуктов: " + err);
       } finally {
